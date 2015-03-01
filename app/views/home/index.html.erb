@@ -1,15 +1,3 @@
-<div class="heading">
-  <% if user_signed_in? %>
-    <%=link_to "Log out", destroy_user_session_path %>
-    <%=link_to "Go to your page.", user_path(current_user) %>
-
-  <% else %>
-    <%= link_to "Log in.", new_user_session_path %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-  <% end %>
-</div>
-
-<div class="container">
   <div class="image">
   <%= image_tag "plottwist.png" %>
   </div>
@@ -32,4 +20,3 @@
   </div>
 
 
-</div>

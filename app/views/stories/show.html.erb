@@ -1,0 +1,36 @@
+<div class="titlepage">
+  <h1><%= @story.title %></h1>
+
+  <p>written by</p>
+
+    <div class="authors">
+      <p><%= @story.creator.first_name %>    
+        <% @users.each do |user| %>
+        <%= user.first_name  %>
+        <% end %>
+      </p>
+    </div>
+
+    <br><br>
+    <div class="info">
+      <p><b>Lines written: </b>
+        <% if @story.lines.count == 0 %>
+        <%= "1" %>
+        <% else %>
+        <%= @story.lines.count %>
+        <% end %>
+      </p>
+      <p><% if current_user.id == @story.creator_id %>
+          <b>First line: </b><%= @story.first_line %>
+        <% end %>
+      </p>
+    </div>
+
+    <br><br>
+    <p><button type="button" class="btn"><%= link_to "Add Writers", new_story_invite_path(@story) %></button></p>
+
+    <br><br>
+    <button type="button" class="btn"><%= link_to "Full Story", story_lines_path(@story), data: {confirm: "Are you sure the story is done?"} %></button>
+</div>
+
+  

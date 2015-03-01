@@ -1,0 +1,12 @@
+<div class="titlepage">
+  <h1><%= @story.title %></h1>
+
+  <div class="full">
+  <p><%= @story.first_line %>
+
+  <% @lines.each do |line| %>
+      <%= line.body %>
+  <% end %>
+  </p>
+  </div>
+</div>

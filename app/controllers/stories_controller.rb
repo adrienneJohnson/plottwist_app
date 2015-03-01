@@ -1,7 +1,9 @@
 class StoriesController <ApplicationController
-  
+  before_filter :authenticate_user!
+
   def new
     @story = Story.new
+    @creator = current_user
   end
     
   def create
@@ -17,13 +19,13 @@ class StoriesController <ApplicationController
 
   def show
     @story = Story.find_by_id(params[:id])
-    @user = @story.user
+    @users = @story.users.all
   end
 end
-
 
 private
 
 def story_params
   params.require(:story).permit(:title, :description)
 end
+

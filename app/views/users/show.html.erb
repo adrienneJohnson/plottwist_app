@@ -1,9 +1,12 @@
-<%= @user.first_name %>
+<div class="titlepage">
+  <h3><%= @user.first_name %>'s Shelf</h3>
 
-<%= link_to "Start a new story.", new_story_path(current_user) %>
-
-<ul>
-  <% @stories.each do |story| %>
-    <li><%= link_to story.title, story_path(story) %></li>
-  <% end %>
-</ul>
+  <div class="shelf">
+    <% @stories.each do |story| %>
+      <button type="button" class="storytitles">
+          <%= link_to story.title, story_path(story) %>
+      </button>  
+    <% end %>
+  </div>
+<p><button type="button" class="btn"><%= link_to "Start a new story.", new_story_path(current_user) %></button></p>
+</div>

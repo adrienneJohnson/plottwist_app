@@ -6,8 +6,9 @@ body {
 }
 
 .heading {
-  float: left;
+  float: right;
   top: 0;
+  padding-right: 90px;
 }
 
 .container {
@@ -73,4 +74,96 @@ span.text-content span {
 
 .hover:hover span.text-content {
   opacity: 1;
+}
+
+.shelf {
+  display: inline-block;
+  margin: 20px; 
+}
+
+.storytitles {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  -webkit-box-shadow: 6px 6px 5px #030103;
+  -moz-box-shadow: 6px 6px 5px #030103;
+  box-shadow: 6px 6px 5px #030103;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 20px;
+  background: #968888;
+  width: 100px;
+  height: 150px;
+  padding: 20px 6px 40px 6px;
+  border: solid #595e61 1px;
+  text-decoration: none;
+  float: left;
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.storytitles:hover {
+  background: #bcc6cc;
+  text-decoration: none;
+}
+
+.titlepage {
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  padding-right: 200px;
+}
+
+.authors {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a:link {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+.btn {
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  -webkit-box-shadow: 5px 5px 5px #030103;
+  -moz-box-shadow: 5px 5px 5px #030103;
+  box-shadow: 5px 5px 5px #030103;
+  font-family: Courier New;
+  color: #030003;
+  font-size: 16px;
+  background: #8c9aa3;
+  padding: 6px 20px 6px 20px;
+  border: solid #595e61 1px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #bcc6cc;
+  text-decoration: none;
+}
+
+.field {
+  padding: 10px;
+}
+
+.actions {
+  padding: 10px;
+}
+
+.full {
+  text-align: left;
+}
+
+.info {
+  text-align: left;
 }

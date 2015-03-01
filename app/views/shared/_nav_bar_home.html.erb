@@ -1,0 +1,9 @@
+<div class="heading">
+  <% if user_signed_in? %>
+    <%=link_to "YOUR PAGE", user_path(current_user) %> // 
+    <%=link_to "LOG OUT", destroy_user_session_path %> 
+  <% else %>
+    <%= link_to "LOG IN", new_user_session_path %> //
+    <%= link_to "SIGN UP", new_user_registration_path %>
+  <% end %>
+</div>

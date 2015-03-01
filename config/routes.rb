@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     get "users/sign_out", to: "devise/sessions#destroy"
   end  
   resources :users, only: [:show] 
-  resources :stories
+  resources :stories do
+    resources :invites
+    resources :lines, only: [:index]
+  end
+
   
 
 
