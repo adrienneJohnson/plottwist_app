@@ -1,0 +1,17 @@
+<h2>Start a Story</h2>
+
+<%=form_for @story, url: {action: "create"} do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create story" %>
+  </div>
+<% end %>

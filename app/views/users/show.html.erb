@@ -1,0 +1,9 @@
+<%= @user.first_name %>
+
+<%= link_to "Start a new story.", new_story_path(current_user) %>
+
+<ul>
+  <% @stories.each do |story| %>
+    <li><%= link_to story.title, story_path(story) %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,35 @@
+<div class="heading">
+  <% if user_signed_in? %>
+    <%=link_to "Log out", destroy_user_session_path %>
+    <%=link_to "Go to your page.", user_path(current_user) %>
+
+  <% else %>
+    <%= link_to "Log in.", new_user_session_path %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="image">
+  <%= image_tag "plottwist.png" %>
+  </div>
+
+  <div class = "hover">
+    <div class="light">
+    <span class="text-content"><span>Although it was a quiet Sunday morning and most of the shops were closed, nearly every storefront displayed the bright blue and white colors of River Heights High. The sports shop window was filled with blue and white sweatshirts, and many of the other stores had signs cheering on the River Heights Wildcats to beat Red Rocks High.</span></span>
+  </div>
+  </div>
+
+  <div class = "hover">
+  <div class="dark">
+    <span class="text-content"><span>“It was sweet of Dad to give me this car for my birthday,” she thought. Her father, Carson Drew, a well-known lawyer in their home town of River Heights, frequently discussed puzzling aspects of cases with his blond, blue-eyed daughter. Smiling, Nancy said to herself, “Dad depends on my intuition.” An instant later she gasped in horror.</span></span>
+  </div>
+  </div>
+
+  
+  <div class= "darkest">
+    <p class="blocktext">Write a story with friends, one text at a time. Find out the full story only when it's finished.</p>
+  </div>
+
+
+</div>
