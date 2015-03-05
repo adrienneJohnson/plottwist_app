@@ -3,6 +3,8 @@ body {
   background-color: white;
   margin: 0 auto;
   font-family: 'Courier New';
+  color: #423742;
+  letter-spacing: -1.75px;
 }
 
 .heading {
@@ -13,42 +15,84 @@ body {
 
 .container {
   width: 920px;
-  padding: 90px;
+  padding: 84px;
+
 }
 
 .image {
   float: left;
+  margin: 1px;
+  padding: 1px;
 }
 
 .light {
-background-color: #DCDCDC;
-width: 361px;
-height: 230px;
-float: left;
+   background: #f7faff;
+  background-image: -webkit-linear-gradient(top, #f7faff, #aaabb0);
+  background-image: -moz-linear-gradient(top, #f7faff, #aaabb0);
+  background-image: -ms-linear-gradient(top, #f7faff, #aaabb0);
+  background-image: -o-linear-gradient(top, #f7faff, #aaabb0);
+  background-image: linear-gradient(to bottom, #f7faff, #aaabb0);
+  -webkit-box-shadow: 5px 5px 5px #030103;
+  -moz-box-shadow: 5px 5px 5px #030103;
+  box-shadow: 5px 5px 5px #030103;
+   -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  width: 361px;
+  height: 230px;
+  float: left;
+  padding: 1px;
+  margin: 1px;
 }
 
 .dark {
-background-color: #717171;
-width: 361px;
-height: 230px;
-float: left;
+  background: #474347;
+  background-image: -webkit-linear-gradient(top, #474347, #c0c0c2);
+  background-image: -moz-linear-gradient(top, #474347, #c0c0c2);
+  background-image: -ms-linear-gradient(top, #474347, #c0c0c2);
+  background-image: -o-linear-gradient(top, #474347, #c0c0c2);
+  background-image: linear-gradient(to bottom, #474347, #c0c0c2);;
+  -webkit-box-shadow: 5px 5px 5px #030103;
+  -moz-box-shadow: 5px 5px 5px #030103;
+  box-shadow: 5px 5px 5px #030103;
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  width: 361px;
+  height: 230px;
+  float: left;
+  padding: 1px;
+  margin: 1px;
 }
 
 .darkest {
-background-color: #B0B0B0;
-width: 361px;
-height: 230px;
-float: left;
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #B0B0B0);
+  background-image: -moz-linear-gradient(top, #ffffff, #B0B0B0);
+  background-image: -ms-linear-gradient(top, #ffffff, #B0B0B0);
+  background-image: -o-linear-gradient(top, #ffffff, #B0B0B0);
+  background-image: linear-gradient(to bottom, #ffffff, #B0B0B0);
+  -webkit-box-shadow: 5px 5px 5px #030103;
+  -moz-box-shadow: 5px 5px 5px #030103;
+  box-shadow: 5px 5px 5px #030103;width: 361px;
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  height: 230px;
+  float: left;
+  padding: 1px;
+  margin: 1px;
+
 }
 
 P.blocktext {
-    vertical-align: middle;
-    margin-top: 3em;
-    margin-left: auto; 
-    margin-right: auto;
-    width: 14em;
-    font-family: 'Courier New';
-    font-size: 20px;
+  vertical-align: middle;
+  margin-top: 3em;
+  margin-left: auto; 
+  margin-right: auto;
+  width: 14em;
+  font-family: 'Courier New';
+  font-size: 20px;
 }
 
 span.text-content {
@@ -64,6 +108,9 @@ span.text-content {
   -moz-transition: opacity 1900ms;
   -o-transition: opacity 1900ms;
   transition: opacity 1900ms;
+   -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
 }
 
 span.text-content span {
@@ -91,8 +138,12 @@ span.text-content span {
   font-family: Courier New;
   color: #ffffff;
   font-size: 20px;
-  background: #968888;
-  width: 100px;
+  background: #ebdfeb;
+  background-image: -webkit-linear-gradient(top, #ebdfeb, #fff7ff);
+  background-image: -moz-linear-gradient(top, #ebdfeb, #fff7ff);
+  background-image: -ms-linear-gradient(top, #ebdfeb, #fff7ff);
+  background-image: -o-linear-gradient(top, #ebdfeb, #fff7ff);
+  background-image: linear-gradient(to bottom, #ebdfeb, #fff7ff);  width: 100px;
   height: 150px;
   padding: 20px 6px 40px 6px;
   border: solid #595e61 1px;
@@ -101,10 +152,13 @@ span.text-content span {
   text-align: center;
   margin-right: 10px;
   margin-left: 10px;
+  letter-spacing: -1.75px;
+  font-size: 16px;
+
 }
 
 .storytitles:hover {
-  background: #bcc6cc;
+  background: #e0e0e0;
   text-decoration: none;
 }
 
@@ -128,27 +182,26 @@ a:link {
 
 a:visited {
     color: #000000;
-    text-decoration: none;
 }
 
 .btn {
   -webkit-border-radius: 9;
-  -moz-border-radius: 9;
-  border-radius: 9px;
+  -moz-border-radius: 2;
+  border-radius: 4px;
   -webkit-box-shadow: 5px 5px 5px #030103;
   -moz-box-shadow: 5px 5px 5px #030103;
   box-shadow: 5px 5px 5px #030103;
-  font-family: Courier New;
-  color: #030003;
+  font-family: "Courier New";
+  color: #423742;
   font-size: 16px;
-  background: #8c9aa3;
+  background: #f7f7f7;
   padding: 6px 20px 6px 20px;
   border: solid #595e61 1px;
   text-decoration: none;
 }
 
 .btn:hover {
-  background: #bcc6cc;
+  background: #e0e0e0;
   text-decoration: none;
 }
 

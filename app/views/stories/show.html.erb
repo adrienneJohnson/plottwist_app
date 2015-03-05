@@ -4,11 +4,9 @@
   <p>written by</p>
 
     <div class="authors">
-      <p><%= @story.creator.first_name %>    
         <% @users.each do |user| %>
-        <%= user.first_name  %>
+        <p><%= user.first_name  %></p>
         <% end %>
-      </p>
     </div>
 
     <br><br>

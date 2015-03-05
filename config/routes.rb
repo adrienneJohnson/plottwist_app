@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end  
   resources :users, only: [:show] 
   resources :stories do
+    resources :memberships, only: [:new]
     resources :invites
     resources :lines, only: [:index]
   end

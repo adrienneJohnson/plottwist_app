@@ -7,12 +7,14 @@ class StoriesController <ApplicationController
   end
     
   def create
-    @story = current_user.stories.build(story_params)    
+    @story = Story.new(story_params)
+    @story.creator_id = current_user.id
+    @story.users << current_user   
     if @story.save
       flash[:notice] = "You're off to a great start."
       redirect_to user_path(current_user)
     else
-      flash[:alert] = "There was a problem."
+      flash[:alert] = "Some information was missing. Try a second draft."
       render :new
     end
   end
@@ -26,6 +28,6 @@ end
 private
 
 def story_params
-  params.require(:story).permit(:title, :description)
+  params.require(:story).permit(:title, :description, :first_line)
 end
 

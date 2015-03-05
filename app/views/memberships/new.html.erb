@@ -1,0 +1,20 @@
+<h3>Search results</h3>
+
+<% if @users.present? %>
+  <% @users.each do |user| %>
+  <%= user.first_name %> <%= user.last_name %> <%= user.email %>
+  
+  <h4>Invite <%= user.first_name %> to your story.</h4>
+
+  <%= form_for @invite, :url => story_invites_path do |f| %>
+    <%= f.hidden_field :story_id, :value => @invite.story_id %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.submit 'Send' %>
+  <% end %>
+<% end %>
+
+<% else %>
+  <p>We don't have any users with the email <%= params[:search] %>, but we'd like one!</p>
+  <p>Send <%= params[:search] %>an invite to sign up.</p>
+<% end %>
