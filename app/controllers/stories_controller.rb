@@ -25,6 +25,8 @@ class StoriesController <ApplicationController
   end
 end
 
+
+
 private
 
 def story_params

@@ -2,19 +2,18 @@
 
 <% if @users.present? %>
   <% @users.each do |user| %>
-  <%= user.first_name %> <%= user.last_name %> <%= user.email %>
-  
-  <h4>Invite <%= user.first_name %> to your story.</h4>
-
-  <%= form_for @invite, :url => story_invites_path do |f| %>
-    <%= f.hidden_field :story_id, :value => @invite.story_id %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <%= f.submit 'Send' %>
+    <p><%= user.first_name %> <%= user.last_name %></p> 
+     <%= form_for @invite, :url => story_invites_path do |f| %>
+      <%= f.hidden_field :story_id, :value => @invite.story_id %>
+      <%= f.hidden_field :email, :value => user.email %>
+      <%= f.hidden_field :user_id, :value => user.id %>
+      <%= f.submit 'Add to Story' %>
+    <% end %>
   <% end %>
-<% end %>
 
 <% else %>
-  <p>We don't have any users with the email <%= params[:search] %>, but we'd like one!</p>
-  <p>Send <%= params[:search] %>an invite to sign up.</p>
+  <script type="text/javascript">
+    window.location.href="<%= new_user_invitation_path %>"; 
+  </script>
+
 <% end %>

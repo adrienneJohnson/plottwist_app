@@ -1,11 +1,12 @@
 <div class="titlepage">
-  <h1><%= @story.title %></h1>
-
+  <div class = "title">
+    <h2><%= @story.title %></h2>
+  </div>
   <p>written by</p>
 
     <div class="authors">
         <% @users.each do |user| %>
-        <p><%= user.first_name  %></p>
+        <li><%= user.first_name %></li>
         <% end %>
     </div>
 

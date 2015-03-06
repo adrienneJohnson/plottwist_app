@@ -1,19 +1,8 @@
 <div class="titlepage">
-  <h4>Who would you like to help you write this story?</h4>
+  <h3>Who would you like to help you write this story?</h3>
 
   <div class="actions info">
     <%= render "shared/index" %>
-    
-    <br>
-
-    <h4>Invite a friend to Plot Twist.</h4>
-    <%=form_for @invite, url: {action: "create"} do |f| %>
-      <%= f.hidden_field :story_id, :value => @invite.story_id %>
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-      <%= f.submit 'Send' %>
-    <% end %>
-       
+   <br>
   </div>
- 
 </div>
