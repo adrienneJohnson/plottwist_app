@@ -4,16 +4,15 @@ def new
     if params[:search]
       @users = User.search(params[:search])
     end
-    @invite = Invite.new
     @membership = Membership.new
   end
 
   def create
-    @story = Story.find_by_id(params[:id])
-    @membership = Membership.new(membership_params)
+    @story = Story.find(params[:story_id])
+    @membership = @story.memberships.build(membership_params)
     if @membership.save
-      flash[:notice] = "Added writer."
-      redirect_to "/"
+      flash[:notice] = "writer added."
+      redirect_to story_path(@story)
     end
   end
 end

@@ -1,7 +1,0 @@
-<h4>Search for a user by email.</h4> 
-    <%= form_tag new_story_membership_path(@story), :method => "get" do %>
-    <%=label_tag :search, params[:search] %>
-    <%=text_field_tag(:search) %>
-    <%=submit_tag "Search", :name => nil %>
-    <% end %>
-

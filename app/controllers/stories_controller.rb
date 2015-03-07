@@ -11,10 +11,10 @@ class StoriesController <ApplicationController
     @story.creator_id = current_user.id
     @story.users << current_user   
     if @story.save
-      flash[:notice] = "You're off to a great start."
+      flash[:notice] = "off to a great start!"
       redirect_to user_path(current_user)
     else
-      flash[:alert] = "Some information was missing. Try a second draft."
+      flash[:alert] = "some information was missing. try again."
       render :new
     end
   end

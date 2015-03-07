@@ -1,13 +1,26 @@
-<div class="titlepage">
-  <div class="title">
-    <h2><%= @user.first_name %>'s Shelf</h2>
+<div class = "titlepage">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class ="shelf-name">
+        <h1><%= current_user.first_name %>'s Shelf</h1>
+      </div>  
+    </div>
   </div>
-  <div class="shelf">
-    <% @stories.each do |story| %>
-      <button type="button" class="storytitles">
-          <%= link_to story.title, story_path(story) %>
-      </button>  
-    <% end %>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <table class="table">
+      <tbody>
+        <tr>
+          <% @stories.each do |story| %>
+            <td><%= link_to story.title, story_path(story) %></td>
+       </tr>
+          <% end %>
+      </tbody>
+      </table>
+    </div>
   </div>
-<p><button type="button" class="btn"><%= link_to "Start a new story", new_story_path(current_user) %>.</button></p>
+
+  <button type="button" class="btn"><%= link_to "start a new story", new_story_path(current_user) %></button>
 </div>
+
