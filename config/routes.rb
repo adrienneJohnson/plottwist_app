@@ -10,7 +10,14 @@ Rails.application.routes.draw do
     resources :invites
     resources :lines, only: [:index]
   end
+  post 'notifications/notify' => 'notifications#notify'
+  post 'twilio/voice' => 'twilio#voice'
+  post 'notifications/start' => 'notifications#start'
+ 
+  
 
+      
+  
   
 
 

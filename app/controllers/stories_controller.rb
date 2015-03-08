@@ -12,7 +12,7 @@ class StoriesController <ApplicationController
     @story.users << current_user   
     if @story.save
       flash[:notice] = "off to a great start!"
-      redirect_to user_path(current_user)
+      redirect_to story_path(@story)
     else
       flash[:alert] = "some information was missing. try again."
       render :new

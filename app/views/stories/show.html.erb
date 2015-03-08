@@ -13,23 +13,31 @@
     <br><br>
     <div class="info">
       <p><b>Lines written: </b>
-        <% if @story.lines.count == 0 %>
-        <%= "1" %>
-        <% else %>
-        <%= @story.lines.count %>
-        <% end %>
+          <% if @story.lines.count == 0 %>
+          <%= "1" %>
+          <% else %>
+          <%= @story.lines.count %>
+          <% end %>
       </p>
-      <p><% if current_user.id == @story.creator_id %>
+      <% if @story.description.presence %>
+        <p><b>Description: </b><%= @story.description %></p>
+      <% end %>
+      <p> <% if current_user.id == @story.creator_id %>
           <b>First line: </b><%= @story.first_line %>
-        <% end %>
+          <% end %>
       </p>
     </div>
 
     <br><br>
-    <p><button type="button" class="btn"><%= link_to "add writers", new_story_invite_path(@story) %></button></p>
-
-    <br>
-    <button type="button" class="btn"><%= link_to "full story", story_lines_path(@story), data: {confirm: "Are you sure the story is done?"} %></button>
+    <div class = "row">
+      <div class = "col-md-12 col-centered">
+        <button type="button" class="btn"><%= link_to "add writers", new_story_invite_path(@story) %></button>
+        <% if current_user.id == @story.creator_id %>
+        <button type="button" class="btn"><%= link_to "start the chain", notifications_start_path(story_id: @story.id), method: :post, remote: true %></button>
+        <% end %>
+        <button type="button" class="btn"><%= link_to "full story", story_lines_path(@story), data: {confirm: "Are you sure the story is done?"} %></button>
+      </div>
+    </div>
 </div>
 
   

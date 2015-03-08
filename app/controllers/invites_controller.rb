@@ -1,5 +1,9 @@
 class InvitesController <ApplicationController
 
+def index
+end
+
+
   def new
     @invite = Invite.new
     @story = Story.find_by_id(params[:story_id])
