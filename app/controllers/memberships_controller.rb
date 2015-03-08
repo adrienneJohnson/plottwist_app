@@ -13,6 +13,9 @@ def new
     if @membership.save
       flash[:notice] = "writer added."
       redirect_to story_path(@story)
+    else
+      flash[:alert] = "you've already added this writer"
+      redirect_to story_path(@story)
     end
   end
 end

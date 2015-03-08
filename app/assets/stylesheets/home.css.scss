@@ -15,16 +15,15 @@ ul.nav.navbar-nav {
 }
 
 .alert {
+  display: block;
   color: #222;
   background-color: #F2E9E9;
-  width: 200px;
+  width: 250px;
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: center;
   border: none;
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .home-container {
@@ -42,11 +41,11 @@ ul.nav.navbar-nav {
 
 .light {
   background: #ffffff;
-  background-image: -webkit-linear-gradient(top, #ffffff, #222);
-  background-image: -moz-linear-gradient(top, #ffffff, #222);
-  background-image: -ms-linear-gradient(top, #ffffff, #222);
-  background-image: -o-linear-gradient(top, #ffffff, #222);
-  background-image: linear-gradient(to bottom, #ffffff, #222);
+  background-image: -webkit-linear-gradient(top, #ffffff, #101010);
+  background-image: -moz-linear-gradient(top, #ffffff, #101010);
+  background-image: -ms-linear-gradient(top, #ffffff, #101010);
+  background-image: -o-linear-gradient(top, #ffffff, #101010);
+  background-image: linear-gradient(to bottom, #ffffff, #101010);
   -webkit-box-shadow: 5px 5px 5px #030103;
   -moz-box-shadow: 5px 5px 5px #030103;
   box-shadow: 5px 5px 5px #030103;
@@ -62,12 +61,12 @@ ul.nav.navbar-nav {
 }
 
 .dark {
-  background: #222;
-  background-image: -webkit-linear-gradient(top, #222, #ffffff);
-  background-image: -moz-linear-gradient(top, #222, #ffffff);
-  background-image: -ms-linear-gradient(top, #222, #ffffff);
-  background-image: -o-linear-gradient(top, #222, #ffffff);
-  background-image: linear-gradient(to bottom, #222, #ffffff);
+  background: #101010;
+  background-image: -webkit-linear-gradient(top, #101010, #ffffff);
+  background-image: -moz-linear-gradient(top, #101010, #ffffff);
+  background-image: -ms-linear-gradient(top, #101010, #ffffff);
+  background-image: -o-linear-gradient(top, #101010, #ffffff);
+  background-image: linear-gradient(to bottom, #101010, #ffffff);
   -webkit-box-shadow: 5px 5px 5px #030103;
   -moz-box-shadow: 5px 5px 5px #030103;
   box-shadow: 5px 5px 5px #030103;
@@ -144,33 +143,6 @@ span.text-content span {
   margin: 20px; 
 }
 
-.storytitles {
-  -webkit-border-radius: 4;
-  -moz-border-radius: 4;
-  border-radius: 4px;
-  -webkit-box-shadow: 6px 6px 5px #030103;
-  -moz-box-shadow: 6px 6px 5px #030103;
-  box-shadow: 6px 6px 5px #030103;
-  color: #ffffff;
-  font-size: 20px;
-  background: #ebdfeb;
-  background-image: -webkit-linear-gradient(top, #ebdfeb, #fff7ff);
-  background-image: -moz-linear-gradient(top, #ebdfeb, #fff7ff);
-  background-image: -ms-linear-gradient(top, #ebdfeb, #fff7ff);
-  background-image: -o-linear-gradient(top, #ebdfeb, #fff7ff);
-  background-image: linear-gradient(to bottom, #ebdfeb, #fff7ff);  width: 100px;
-  height: 150px;
-  padding: 20px 6px 40px 6px;
-  border: solid #595e61 1px;
-  text-decoration: none;
-  float: left;
-  text-align: center;
-  margin-right: 10px;
-  margin-left: 10px;
-  letter-spacing: -1px;
-  font-size: 16px;
-}
-
 .table {
   vertical-align: middle;
   text-align: center;
@@ -187,11 +159,6 @@ span.text-content span {
 .shelf-name {
   text-align: center;
   padding-bottom: 20px;
-}
-
-.storytitles:hover {
-  background: #e0e0e0;
-  text-decoration: none;
 }
 
 .titlepage {
