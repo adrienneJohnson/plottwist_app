@@ -23,6 +23,15 @@ class StoriesController <ApplicationController
     @story = Story.find_by_id(params[:id])
     @users = @story.users.all
   end
+
+  def destroy
+    @story = Story.find_by_id(params[:id])
+    @story.destroy
+    flash[:notice] = "Story was deleted."
+    redirect_to user_path(current_user)
+  end
+
+
 end
 
 

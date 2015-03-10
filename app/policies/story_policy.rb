@@ -1,0 +1,1 @@
+class StoryPolicy < ApplicationPolicy

@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'simple_form'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twilio-ruby', '~> 3.12'
+gem 'pundit'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
