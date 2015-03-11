@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twilio-ruby', '~> 3.12'
 gem 'pundit'
+gem 'pry'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do

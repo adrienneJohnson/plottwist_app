@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   post 'notifications/notify' => 'notifications#notify'
   post 'twilio/voice' => 'twilio#voice'
   post 'notifications/start' => 'notifications#start'
- 
+
+  post "sms", to: "notifications#process_sms" 
   
 
       
