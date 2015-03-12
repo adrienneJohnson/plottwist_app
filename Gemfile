@@ -6,7 +6,6 @@ group :development, :test do
 end
 group :production do
  gem 'pg'
- gem 'rails_12factor'
 end
 gem 'rails', '4.2.0'
 gem 'bootstrap-sass', '~> 3.3.3'
@@ -34,3 +33,5 @@ group :development, :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'rails_12factor', group: :production
