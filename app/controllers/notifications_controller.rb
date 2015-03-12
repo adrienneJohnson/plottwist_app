@@ -10,7 +10,7 @@ class NotificationsController < ApplicationController
   def start
     @story = Story.find(params[:story_id])
     client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-    message = client.messages.create from: '2013808485', to: @story.memberships.second.user.phone, body: @story.first_line, to_zip: @story.id
+    message = client.messages.create from: '2013808485', to: @story.memberships.second.user.phone, body: @story.first_line
     render plain: message.status
   end
 
@@ -20,7 +20,43 @@ class NotificationsController < ApplicationController
     @user_id = @user.id
     @story_id = @user.memberships.first.story_id
     @line = Line.create(body: @body, user_id: @user_id, story_id: @story_id)  
-    render 'twilio/process_sms.xml.erb', :content_type => 'text/xml'
-  end
+      if @line.save
+        @story = Story.find_by_id(@story_id)
+        if @user == @story.memberships.first.user
+          client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+          message = client.messages.create from: '2013808485', to: @story.memberships.second.user.phone, body: @story.lines.last.body
+          render plain: message.status
+        elsif @user == @story.memberships.second.user && @story.memberships.second.user != @story.memberships.last.user
+          client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+          message = client.messages.create from: '2013808485', to: @story.memberships.third.user.phone, body: @story.lines.last.body
+          render plain: message.status
+        elsif @user == @story.memberships.second.user && @story.memberships.second.user == @story.memberships.last.user
+          client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+          message = client.messages.create from: '2013808485', to: @story.memberships.first.user.phone, body: @story.lines.last.body
+          render plain: message.status
+        elsif @user == @story.memberships.third.user && @story.memberships.third.user != @story.memberships.last.user
+          client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+          message = client.messages.create from: '2013808485', to: @story.memberships.fourth.user.phone, body: @story.lines.last.body
+          render plain: message.status
+        elsif @user == @story.memberships.third.user && @story.memberships.third.user == @story.memberships.last.user
+          client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+          message = client.messages.create from: '2013808485', to: @story.memberships.first.user.phone, body: @story.lines.last.body
+          render plain: message.status
+        elsif @user == @story.memberships.fourth.user && @story.memberships.fourth.user != @story.memberships.last.user
+          client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+          message = client.messages.create from: '2013808485', to: @story.memberships.fifth.user.phone, body: @story.lines.last.body
+          render plain: message.status
+        elsif @user == @story.memberships.fourth.user && @story.memberships.fourth.user == @story.memberships.last.user
+          client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+          message = client.messages.create from: '2013808485', to: @story.memberships.first.user.phone, body: @story.lines.last.body
+          render plain: message.status
+        elsif @user == @story.memberships.fifth.user
+          client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+          message = client.messages.create from: '2013808485', to: @story.memberships.first.user.phone, body: @story.lines.last.body
+          render plain: message.status
+        end
+      end
+    end
+  
 end
 
